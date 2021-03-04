@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=st
+GenericName=Terminal
+Comment=suckless simple terminal emulator
+Icon=st
+Terminal=false
+Categories=System;TerminalEmulator;
+Actions=New;
+
+[Desktop Action New]
+Name=New Terminal
+Exec=st
