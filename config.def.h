@@ -76,6 +76,8 @@ static int bellvolume = 0;
 /* default TERM value */
 char *termname = "st-256color";
 
+float alphaUnfocused = 0.6;
+
 /*
  * spaces per tab
  *
@@ -131,6 +133,8 @@ unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
+unsigned int bg = 17;
+unsigned int bgUnfocused = 16;
 
 /*
  * Default shape of cursor
