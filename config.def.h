@@ -6,6 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font2 = NULL;
 static int borderpx = 2;
 
 /*
@@ -93,6 +94,10 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.8;
+float alphaUnfocused = 0.6;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -118,6 +123,10 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
+	/* foreground, background, backgroundUnfocused, cursor, reverse cursor */
+	"gray90",
+	"black",
+	"black",
 	"#cccccc",
 	"#555555",
 };
@@ -127,8 +136,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -173,6 +182,7 @@ static uint forcemousemod = ShiftMask;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
+		{ "font2",        STRING,  &font2 },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },
@@ -190,8 +200,9 @@ ResourcePref resources[] = {
 		{ "color14",      STRING,  &colorname[14] },
 		{ "color15",      STRING,  &colorname[15] },
 		{ "background",   STRING,  &colorname[256] },
-		{ "foreground",   STRING,  &colorname[257] },
-		{ "cursorColor",  STRING,  &colorname[258] },
+		{ "bgUnfocused",	STRING,  &colorname[257] },
+		{ "foreground",   STRING,  &colorname[258] },
+		{ "cursorColor",  STRING,  &colorname[259] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "minlatency",   INTEGER, &minlatency },
@@ -202,6 +213,8 @@ ResourcePref resources[] = {
 		{ "borderpx",     INTEGER, &borderpx },
 		{ "cwscale",      FLOAT,   &cwscale },
 		{ "chscale",      FLOAT,   &chscale },
+		{ "alpha",        FLOAT,   &alpha },
+		{ "alphaNoFocus", FLOAT,   &alphaUnfocused },
 };
 
 /*
