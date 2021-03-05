@@ -7,3 +7,15 @@ The [suckless terminal (st)](https://st.suckless.org/) with all the patches appl
 + Boxdraw
 + XResources
 + font2
++ alpha
++ boldnotbright
++ clipboard
++ desktopentry
++ externalpipe
++ focus
++ font2
++ ligatures
++ w3m
++ scroll
++ Luke Smith's external pipe enhancements
++ My own customizations (Keybindings, fonts, etc.)
