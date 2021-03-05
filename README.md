@@ -19,6 +19,9 @@ The [suckless terminal (st)](https://st.suckless.org/) with all the patches appl
 + scroll (requires [scroll](https://tools.suckless.org/scroll/) binary in /usr/bin/)
 + vertcenter
 + workingdir
-+ emoji (requires [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/))
 + Luke Smith's external pipe enhancements
 + My own customizations (Keybindings, fonts, etc.)
+
+## Required third-party libraries
+
+Colored emoji require [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/), for scrolling suckless [scroll](https://tools.suckless.org/scroll/) is needed.
