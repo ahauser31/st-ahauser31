@@ -17,5 +17,7 @@ The [suckless terminal (st)](https://st.suckless.org/) with all the patches appl
 + ligatures
 + w3m
 + scroll
++ vertcenter
++ workingdir
 + Luke Smith's external pipe enhancements
 + My own customizations (Keybindings, fonts, etc.)
