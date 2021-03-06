@@ -49,9 +49,17 @@ install: st
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
 	tic -sx st.info
 	@echo Please see the README file regarding the terminfo entry of st.
+	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
+	cp -f st.desktop $(DESTDIR)$(PREFIX)/share/applications
+	chmod 644 $(DESTDIR)$(PREFIX)/share/applications/st.desktop
+	mkdir -p $(DESTDIR)$(PREFIX)/share/pixmaps
+	cp -f st.svg $(DESTDIR)$(PREFIX)/share/pixmaps
+	chmod 644 $(DESTDIR)$(PREFIX)/share/pixmaps/st.svg
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/st
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
+	rm -f $(DESTDIR)$(PREFIX)/share/applications/st.desktop
+	rm -f $(DESTDIR)$(PREFIX)/share/pixmaps/st.svg
 
 .PHONY: all options clean dist install uninstall
