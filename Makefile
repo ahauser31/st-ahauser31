@@ -36,7 +36,7 @@ clean:
 
 scroll:
 ifeq ("$(wildcard $(/usr/bin/scroll))","")
-$(error "suckless scroll not installed!")
+	$(error "suckless scroll not installed!")
 endif
 
 install: st scroll
