@@ -35,7 +35,7 @@ clean:
 	rm -f st $(OBJ) st-$(VERSION).tar.gz config.h
 
 scroll:
-ifeq ("$(wildcard $(/usr/bin/scroll))","")
+ifeq (,$(wildcard /usr/bin/scroll))
 	$(error "suckless scroll not installed!")
 endif
 
