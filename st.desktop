@@ -1,6 +1,8 @@
 [Desktop Entry]
 Type=Application
 Name=st
+Exec=st
+TryExec=st
 GenericName=Terminal
 Comment=suckless simple terminal emulator
 Icon=st
